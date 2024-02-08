@@ -1,0 +1,100 @@
+body {
+    padding: 0px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    form {
+        max-width: 370px;
+        width: 100%;
+        position: relative;
+    
+        input {
+            padding: 22px 18px;
+            width: -webkit-fill-available;
+            border-radius: 5px;
+            border: 1px solid $input-color;
+            color: $text-primary-color;
+            background-color: transparent;
+        }
+        input::placeholder {
+            color: transparent;
+        }
+        input:focus {
+            outline: none;
+
+        }
+        .placeholder {
+            padding: 2px 9px;
+            font-size: 13px;
+            font-family: $inter;
+            color: #A1A1A1;
+            position: absolute;
+            margin-left: 9px;
+            margin-top: -40px;
+            background-color: #fff;
+            transition: 0.2s ease-in-out;
+            z-index: -1;
+        }
+        .placeholder.active {
+            margin-top: -71px;
+            z-index: 1;
+        }
+        .spinner {
+            position: absolute;
+            background-color: transparent;
+            margin-top: -40px;
+            padding: 0px;
+            right: 52px;
+            font-size: 20px;
+            animation: spin 2s linear infinite;
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+        }
+        .spinner.visible {
+            opacity: 1;
+        }
+        .search-button {
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            margin-top: 20px;
+            padding: 0px;
+            right: 18px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+    .results-container {
+        background-color: $background-color;
+        max-width: 370px;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+        position: absolute;
+
+        .result-item{
+            display: flex;
+            justify-content: space-between;
+            font-family: $inter;
+            font-size: 13px;
+            margin: 20px;
+
+            p{
+                margin: 0;
+
+            }
+            .product-price{
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
